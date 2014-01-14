@@ -1,0 +1,11 @@
+Package: com.marchrius.infohider
+Name: InfoHider
+Depends: mobilesubstrate
+Architecture: iphoneos-arm
+Description: This tweak hide the informations in Settings->General->About and became usefull when you want to record your screen to show a feature or the iOS version installed. You can control this tweak via Settings application.
+Depiction: http://mprcydia.altervista.org/repository/depictions/infohider/localindex.php
+Maintainer: Matteo Gaggiano
+Author: Matteo Gaggiano
+Section: Tweaks
+Version: 0.0.4-20
+Installed-Size: 496

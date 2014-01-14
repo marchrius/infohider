@@ -1,0 +1,10 @@
+{
+	entry = {
+		bundle = InfoHiderSettings;
+		cell = PSLinkCell;
+		detail = "InfoHiderSettingsListController";
+		icon = "InfoHider.png";
+		isController = 1;
+		label = InfoHider;
+	};
+}

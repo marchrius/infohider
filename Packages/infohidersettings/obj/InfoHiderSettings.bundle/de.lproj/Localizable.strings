@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ABOUT_ME</key>
+	<string>InfoHider © 2014 Matteo Gaggiano (Marchrius).
+Das ist eine Vorabversion (Beta).
+Deutsch Übersetzung bei @iFixTranslate</string>
+    <key>OPTIONS</key>
+    <string>Einstellungen</string>
+	<key>Applications</key>
+	<string>Apps</string>
+	<key>Available</key>
+	<string>Verfügbar</string>
+	<key>Bluetooth</key>
+	<string>Bluetooth</string>
+	<key>CUSTOM_MESSAGE_TEXT</key>
+	<string>eigene nachricht...</string>
+	<key>Capacity</key>
+	<string>Kapazität</string>
+	<key>Carrier</key>
+	<string>Netzbetreiber</string>
+	<key>Credits</key>
+	<string>Credits</string>
+	<key>DBG_MODE</key>
+	<string>Debug modus</string>
+	<key>DBG_OPT</key>
+	<string>Debug Optionen</string>
+	<key>DESCRIPTION_FIRST_GROUP</key>
+	<string>Schalte den switch an um die jeweiligen Texte zu verstecken. Solltest du ein nur WiFi Model besitzen, wird der "Nicht Unterstützt" switch ignoriert.</string>
+	<key>DISABLE_DEBUG_LABEL</key>
+	<string>Deaktiviere diesen switch wenn du keine Probleme mit diesem Tweak hast!</string>
+	<key>Donate</key>
+	<string>Spenden</string>
+	<key>ENABLE_INFOHIDER_LABEL</key>
+	<string>InfoHider Aktivieren</string>
+	<key>Firmware Modem</key>
+	<string>Modem-Firmware</string>
+	<key>ICCID</key>
+	<string>ICCID</string>
+	<key>IMEI</key>
+	<string>IMEI</string>
+	<key>LABEL_MAKE_COPYABLE</key>
+	<string>Alle Felder "kopierbar" machen</string>
+	<key>MESSAGE_LABEL</key>
+	<string>Nachricht</string>
+	<key>Model</key>
+	<string>Model</string>
+	<key>Network</key>
+	<string>Netzwerk</string>
+	<key>Phone Number</key>
+	<string>Telefon Nummer</string>
+	<key>Photos</key>
+	<string>Fotos</string>
+	<key>Serial Number</key>
+	<string>Serial Nummer</string>
+	<key>Songs</key>
+	<string>Lieder</string>
+	<key>USE_CUSTOM_MESSAGE_LABEL</key>
+	<string>Eigene Nachricht Verwenden</string>
+	<key>Version</key>
+	<string>Version</string>
+	<key>Videos</key>
+	<string>Videos</string>
+	<key>WEBSITE</key>
+	<string>Meine Website besuchen</string>
+	<key>Wi-Fi Address</key>
+	<string>Wi-Fi Adresse</string>
+    <key>Switches</key>
+    <string>Schalter</string>
+    <key>ACTIVATOR_METHOD</key>
+    <string>Aktivierungsverfahren</string>
+    <key>ADD_REFRESH_CONTROL</key>
+    <string>Hinzufügen "Zum Aktualisieren ziehen"</string>
+</dict>
+</plist>
