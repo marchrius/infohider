@@ -95,6 +95,57 @@ img {
   max-width:100%;
 }
 
+ul.giant_button {
+    max-width:270px;
+    height:198px;
+    padding-left:0;
+    list-style:none;
+}
+
+
+
+ul.giant_button li {
+    background: #fff;
+    background: -moz-linear-gradient(top, #f8f8f8 0%, #dddddd 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f8f8f8), color-stop(100%,#dddddd));
+    background: -webkit-linear-gradient(top, #f8f8f8 0%,#dddddd 100%);
+    background: -o-linear-gradient(top, #f8f8f8 0%,#dddddd 100%);
+    background: -ms-linear-gradient(top, #f8f8f8 0%,#dddddd 100%);
+    background: linear-gradient(top, #f8f8f8 0%,#dddddd 100%);
+    
+    border-radius:5px;
+    border:1px solid #d2d2d2;
+    box-shadow:inset #fff 0 1px 0, inset rgba(0,0,0,0.03) 0 -1px 0;
+    width:270px;
+    height:64px;
+    margin-top:2px;
+    font-weight:bold;
+
+}
+
+ul.giant_button li.twitter {
+    background-image:url('https://raw.githubusercontent.com/Marchrius/infohider/master/infohidersettings/Resources/twitter@2x.png');
+    background-size:contain;
+    background-position:top left;
+    background-repeat:no-repeat;
+}
+ul.giant_button li.googleplus {
+    background-image:url('https://raw.githubusercontent.com/Marchrius/infohider/master/infohidersettings/Resources/google@2x.png');
+    background-size:contain;
+    background-repeat:no-repeat;
+}
+ul.giant_button li.donate {
+    background-image:url('https://raw.githubusercontent.com/Marchrius/infohider/master/infohidersettings/Resources/donate@2x.png');
+    background-size:contain;
+    background-repeat:no-repeat;
+}
+
+ul.giant_button li span {
+    float:left;
+    margin-left:70px;
+    margin-top:26px;
+}
+
 header {
   width:270px;
   float:left;
