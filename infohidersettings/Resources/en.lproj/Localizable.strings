@@ -5,19 +5,12 @@
 	<key>ABOUT_ME</key>
 	<string>InfoHider © 2014 Matteo Gaggiano (Marchrius).
 This is a beta version.
-English tranlation by Matteo Gaggiano (Marchrius)</string>
-	<key>Applications</key>
-	<string>Applications</string>
-	<key>Available</key>
-	<string>Available</string>
-	<key>Bluetooth</key>
-	<string>Bluetooth</string>
+English tranlation by Matteo Gaggiano (Marchrius).
+Icons pack "Somacro" by vervex (deviantART).</string>
+	<key>OPTIONS</key>
+	<string>Options</string>
 	<key>CUSTOM_MESSAGE_TEXT</key>
 	<string>custom message...</string>
-	<key>Capacity</key>
-	<string>Capacity</string>
-	<key>Carrier</key>
-	<string>Carrier</string>
 	<key>Credits</key>
 	<string>Credits</string>
 	<key>DBG_MODE</key>
@@ -27,48 +20,26 @@ English tranlation by Matteo Gaggiano (Marchrius)</string>
 	<key>DESCRIPTION_FIRST_GROUP</key>
 	<string>Set the switch ON to hide the respective label. If you have a WiFi only device the unsupported switch will be ignored.</string>
 	<key>DISABLE_DEBUG_LABEL</key>
-	<string>Disable if you don't have problem with the tweak.</string>
+	<string>Disable if you don&apos;t have problem with the tweak.</string>
+	<key>Donate</key>
+	<string>Donate</string>
 	<key>ENABLE_INFOHIDER_LABEL</key>
 	<string>Enable InfoHider</string>
-	<key>Firmware Modem</key>
-	<string>Firmware modem</string>
-	<key>ICCID</key>
-	<string>ICCID</string>
-	<key>IMEI</key>
-	<string>IMEI</string>
 	<key>LABEL_MAKE_COPYABLE</key>
-	<string>Make all the fields "Copyable"</string>
+	<string>Make all the fields &quot;Copyable&quot;</string>
 	<key>MESSAGE_LABEL</key>
 	<string>Message</string>
-	<key>Model</key>
-	<string>Model</string>
-	<key>Network</key>
-	<string>Network</string>
-	<key>Phone Number</key>
-	<string>Phone Number</string>
-	<key>Photos</key>
-	<string>Photos</string>
-	<key>Serial Number</key>
-	<string>Serial Number</string>
-	<key>Songs</key>
-	<string>Songs</string>
 	<key>USE_CUSTOM_MESSAGE_LABEL</key>
 	<string>Use custom message</string>
 	<key>Version</key>
 	<string>Version</string>
-	<key>Videos</key>
-	<string>Videos</string>
 	<key>WEBSITE</key>
 	<string>Visit my website</string>
-	<key>Wi-Fi Address</key>
-	<string>Wi-Fi Address</string>
-    <key>Donate</key>
-    <string>Donate</string>
-    <key>Switches</key>
-    <string>Switches</string>
-    <key>ACTIVATOR_METHOD</key>
-    <string>Activation methods</string>
-    <key>ADD_REFRESH_CONTROL</key>
-    <string>Add "Pull to refresh"</string>
+	<key>Switches</key>
+	<string>Switches</string>
+	<key>ACTIVATOR_METHOD</key>
+	<string>Activation methods</string>
+	<key>ADD_REFRESH_CONTROL</key>
+	<string>Add &quot;Pull to refresh&quot;</string>
 </dict>
 </plist>

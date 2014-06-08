@@ -132,7 +132,7 @@
 			<key>label</key>
 			<string>WEBSITE</string>
 			<key>cell</key>
-			<string>PSLinkCell</string>
+			<string>PSGiantCell</string>
 		</dict>
 		<dict>
 			<key>action</key>
@@ -142,7 +142,19 @@
 			<key>label</key>
 			<string>Twitter</string>
 			<key>cell</key>
-			<string>PSLinkCell</string>
+			<string>PSGiantCell</string>
+			<key>New item</key>
+			<string>https://plus.google.com/105378430236922152318/posts</string>
+		</dict>
+		<dict>
+			<key>action</key>
+			<string>visitGoogle:</string>
+			<key>icon</key>
+			<string>google.png</string>
+			<key>label</key>
+			<string>Google+</string>
+			<key>cell</key>
+			<string>PSGiantCell</string>
 		</dict>
 		<dict>
 			<key>action</key>
@@ -152,7 +164,7 @@
 			<key>label</key>
 			<string>Donate</string>
 			<key>cell</key>
-			<string>PSLinkCell</string>
+			<string>PSGiantCell</string>
 		</dict>
 		<dict>
 			<key>cell</key>

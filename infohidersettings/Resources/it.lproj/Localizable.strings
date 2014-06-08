@@ -5,19 +5,12 @@
 	<key>ABOUT_ME</key>
 	<string>InfoHider © 2014 Matteo Gaggiano (Marchrius).
 Questa è una versione soggetta ad errori.
-Traduzione italiana a cura di Matteo Gaggiano (Marchrius)</string>
-	<key>Applications</key>
-	<string>Applicazioni</string>
-	<key>Available</key>
-	<string>Spazio disponibile</string>
-	<key>Bluetooth</key>
-	<string>Bluetooth</string>
+Traduzione italiana a cura di Matteo Gaggiano (Marchrius).
+Icon pack "Somacro" di vervex (deviantART).</string>
+	<key>OPTIONS</key>
+	<string>Impostazioni</string>
 	<key>CUSTOM_MESSAGE_TEXT</key>
 	<string>messaggio personalizzato...</string>
-	<key>Capacity</key>
-	<string>Capacità</string>
-	<key>Carrier</key>
-	<string>Gestore</string>
 	<key>Credits</key>
 	<string>Crediti</string>
 	<key>DBG_MODE</key>
@@ -32,45 +25,21 @@ Traduzione italiana a cura di Matteo Gaggiano (Marchrius)</string>
 	<string>Donazione</string>
 	<key>ENABLE_INFOHIDER_LABEL</key>
 	<string>Abilita InfoHider</string>
-	<key>Firmware Modem</key>
-	<string>Firmware modem</string>
-	<key>ICCID</key>
-	<string>ICCID</string>
-	<key>IMEI</key>
-	<string>IMEI</string>
 	<key>LABEL_MAKE_COPYABLE</key>
-	<string>Rendi i campi "Copiabili"</string>
+	<string>Rendi i campi &quot;Copiabili&quot;</string>
 	<key>MESSAGE_LABEL</key>
 	<string>Messaggio</string>
-	<key>Model</key>
-	<string>Modello</string>
-	<key>Network</key>
-	<string>Rete</string>
-	<key>OPTIONS</key>
-	<string>Impostazioni</string>
-	<key>Phone Number</key>
-	<string>Numero dati cellulare</string>
-	<key>Photos</key>
-	<string>Immagini</string>
-	<key>Serial Number</key>
-	<string>Numero di serie</string>
-	<key>Songs</key>
-	<string>Brani</string>
 	<key>USE_CUSTOM_MESSAGE_LABEL</key>
 	<string>Personalizza messaggio</string>
 	<key>Version</key>
 	<string>Versione</string>
-	<key>Videos</key>
-	<string>Video</string>
 	<key>WEBSITE</key>
 	<string>Visita il mio sito</string>
-	<key>Wi-Fi Address</key>
-	<string>Indirizzo Wi-Fi</string>
-    <key>Switches</key>
-    <string>Interruttori</string>
-    <key>ACTIVATIOR_METHOD</key>
-    <string>Metodi di attivazione</string>
-    <key>ADD_REFRESH_CONTROL</key>
-    <string>Aggiungi "Scorri per ricaricare"</string>
+	<key>Switches</key>
+	<string>Interruttori</string>
+	<key>ACTIVATIOR_METHOD</key>
+	<string>Metodi di attivazione</string>
+	<key>ADD_REFRESH_CONTROL</key>
+	<string>Aggiungi &quot;Scorri per ricaricare&quot;</string>
 </dict>
 </plist>
