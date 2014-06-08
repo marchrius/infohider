@@ -139,8 +139,8 @@ ul.giant_button li:active
     -webkit-box-shadow: inset 2px 2px 1px #000;
     -moz-box-shadow: inset 2px 2px 1px #000;
     -o-box-shadow: inset 2px 2px 1px #000;
-    margin-top:0px;
-    margin-left:-2px;
+    margin-top:2px;
+    margin-left:0px;
 }
 
 ul.giant_button li.twitter {
