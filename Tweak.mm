@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Matteo Gaggiano. All rights reserved.
 //
 
+#import "Tweak.h"
 #import <Preferences/Preferences.h>
 #import <AppleAccount/AADeviceInfo.h>
 #import <UIKit/UIKit2.h>
@@ -21,19 +22,6 @@ NSDictionary *settings = nil;
 UIRefreshControl* refreshControl = nil;
 
 #define DLOG(fmt, ...) if (mustShowLog) NSLog(@"InfoHider: " fmt, ##__VA_ARGS__)
-
-@interface AboutController
--(NSArray*)specifiers;
--(void)reload;
--(void)reloadSpecifiers;
--(void)viewDidLoad;
--(UINavigationItem*)navigationItem;
--(UITableView*)table;
--(void)insertSpecifier:(PSSpecifier*)specifier atIndex:(int)index animated:(BOOL)animated;
--(void)removeSpecifierAtIndex:(int)index;
--(void)replaceContiguousSpecifiers:(NSArray*)specifiers withSpecifiers:(NSArray*)specifiers2 animated:(BOOL)animated;
--(void)replaceContiguousSpecifiers:(NSArray*)specifiers withSpecifiers:(NSArray*)specifiers2;
-@end
 
 %hook AboutController
 
@@ -54,18 +42,28 @@ UIRefreshControl* refreshControl = nil;
     }
     
     DLOG(@"AboutController in Preferences detected.");
-    
+
     useCustomMessage = [[settings objectForKey:@"useCustomMessage"] boolValue];
     
     if (useCustomMessage) {
         message = [settings objectForKey:@"message"];
     }
     
-    NSArray* onlyWifi = @[@"iPad1,1", @"iPad2,1", @"iPad2,4", @"iPad2,5", @"iPad3,1", @"iPad3,4", @"iPad4,1", @"iPad4,4", @"iPod1,1", @"iPod2,1", @"iPod3,1", @"iPod4,1", @"iPod5,1"]; //Devices to skip
     
-    NSMutableArray* keys = [NSMutableArray arrayWithArray:@[@"Network", @"Songs", @"Videos", @"Photos", @"Applications", @"Capacity", @"Available", @"Version", @"Carrier", @"Model", @"Serial Number", @"Phone Number", @"Wi-Fi Address", @"Bluetooth", @"IMEI", @"ICCID", @"Firmware Modem"]]; // All keys
     
-    NSArray* keysToSkip = @[@"Network", @"Carrier", @"Phone Number", @"IMEI", @"ICCID", @"Firmware Modem"]; //Keys to skip
+    NSArray* keysPreferences = @[@"Network",       @"Line", @"Songs",
+                              @"Videos",        @"Photos", @"Applications",
+                              @"Capacity",      @"Available", @"Version", @"Carrier",
+                              @"Model",         @"Serial Number", @"Phone Number",
+                              @"Wi-Fi Address", @"Bluetooth", @"IMEI",
+                              @"ICCID",         @"MEID", @"Firmware Modem"]; // All keys
+    
+   NSArray* keys = @[@"NETWORK", @"LINE", @"SONGS", @"VIDEOS", @"PHOTOS",
+                             @"APPLICATIONS", @"User Data Capacity",
+                             @"User Data Available", @"ProductVersion",@"CARRIER_VERSION",
+                             @"ProductModel", @"SerialNumber", @"CellularDataAddress",
+                             @"MACAddress", @"BTMACAddress", @"ModemIMEI", @"ICCID",
+                             @"MEID", @"ModemVersion"];
     
     id productType, osVersion;
     
@@ -76,7 +74,7 @@ UIRefreshControl* refreshControl = nil;
     osVersion = [device osVersion];
     
     DLOG(@"Running on %@ (%@)", osVersion, productType);
-
+    
     mustShowLog = [[settings objectForKey:@"debugMode"] boolValue];
     
     canCopyIt = [[settings objectForKey:@"canCopyIt"] boolValue];
@@ -91,57 +89,62 @@ UIRefreshControl* refreshControl = nil;
                  forControlEvents:UIControlEventValueChanged];
         [[self table] addSubview:refreshControl];
     }
-    
-    int toSkip = 0;
-    
-    if ([productType hasPrefix:@"iPhone"])
+
+    PSSpecifier* currentSpecifier = nil;
+    for (id key in keys)
     {
-        DLOG(@"iPhone don't have the Phone Number in About View. Removing it.");
-        toSkip = 1;
-        [keys removeObjectsInArray:@[@"Phone Number"]];
-    } else if ([onlyWifi containsObject:productType]) {
-        DLOG(@"This is a WiFi only device.");
-        toSkip += keysToSkip.count;
-        [keys removeObjectsInArray:keysToSkip];
-    }
-    
-    NSArray *specifiers = [NSArray arrayWithArray:[[self specifiers] subarrayWithRange:NSMakeRange(3, keys.count)]];
-    
-    int i = 0;
-    
-    for ( i = 0; i < specifiers.count; i++)
-    {
-        PSSpecifier *currentSpecifier = [specifiers objectAtIndex:i];
+        NSString* name = [[self bundle] localizedStringForKey:key value:key table:nil];
         
-        NSString* aKey = [keys objectAtIndex:i];
+        currentSpecifier = nil;
+        
+        if (![key isEqualToString:@"SONGS"] &&
+            ![key isEqualToString:@"VIDEOS"] &&
+            ![key isEqualToString:@"PHOTOS"] &&
+            ![key isEqualToString:@"CARRIER_VERSION"])
+        {
+            currentSpecifier = [self specifierForID:name];
+        } else {
+            currentSpecifier = [self specifierForID:key];
+        }
+        
+        if (currentSpecifier == nil )
+        {
+            DLOG(@"Specifier %@ (%@) non trovato!", key, name);
+            continue;
+        }
         
         NSString* currentName = [currentSpecifier name];
+        
+        NSString* aKey = [keysPreferences objectAtIndex:[keys indexOfObject:key]];
         
         NSNumber* flagString = [settings objectForKey:aKey];
         
         BOOL flag = [flagString boolValue];
         
         DLOG(@"%@ -> %@ : %@ : %@", currentName, aKey, flagString, (flag) ? @"YES" : @"NO");
-
-        DLOG(@"properties %@", [currentSpecifier properties]);
         
         if (flag) {
-            PSSpecifier* newSpecifier = [[%c(PSSpecifier) preferenceSpecifierNamed:currentName
+            PSSpecifier* newSpecifier = [%c(PSSpecifier) preferenceSpecifierNamed:currentName
                                                                           target:self
                                                                              set:NULL
                                                                              get:@selector(valueForSpecifier:)
                                                                           detail:Nil
                                                                             cell:PSTitleValueCell
-                                                                            edit:Nil] autorelease];
+                                                                            edit:Nil];
             
             [newSpecifier setProperty:@"yes" forKey:@"isChangedDueToTweak"];
-            [self replaceContiguousSpecifiers:@[currentSpecifier] withSpecifiers:@[newSpecifier] animated:YES];
+            
+            [self replaceContiguousSpecifiers:@[currentSpecifier] withSpecifiers:@[newSpecifier] animated:NO];
         }
         
         if (canCopyIt && !flag) {
+            
             [[currentSpecifier properties] setObject:[NSNumber numberWithInt:1] forKey:@"isCopyable"];
+            
         } else {
+            
             [[currentSpecifier properties] setObject:[NSNumber numberWithInt:0] forKey:@"isCopyable"];
+            
         }
     }
     

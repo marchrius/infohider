@@ -22,9 +22,18 @@
     
     NSBundle *traduzioni = [NSBundle bundleWithPath:@"/Library/PreferenceBundles/InfoHiderSettings.bundle"];
     
+    if (![traduzioni load])
+    {
+        return specifiers;
+    }
+    
     [self setTitle:[traduzioni localizedStringForKey:@"Switches" value:@"Switches" table:nil]]; // Localize title controller
     
-    if (![traduzioni load])
+
+    
+    NSBundle* settingsBundle = [NSBundle bundleWithPath:@"/Applications/Preferences.app"];
+    
+    if (![settingsBundle load])
     {
         return specifiers;
     }
@@ -34,35 +43,13 @@
         
         if(name)
         {
-            [spec setName:[traduzioni localizedStringForKey:name value:name table:nil]];
-        }
-        
-        NSString *footerText = [spec propertyForKey:@"footerText"];
-        if(footerText)
-        {
-            [spec setProperty:[traduzioni localizedStringForKey:footerText value:footerText table:nil] forKey:@"footerText"];
-        }
-        
-        NSString *placeholder = [spec propertyForKey:@"placeholder"];
-        if(placeholder)
-        {
-            [spec setProperty:[traduzioni localizedStringForKey:placeholder value:placeholder table:nil] forKey:@"placeholder"];
+            [spec setName:[settingsBundle localizedStringForKey:name value:name table:nil]];
         }
         
         NSString *label = [spec propertyForKey:@"label"];
         if(label)
         {
-            [spec setProperty:[traduzioni localizedStringForKey:label value:label table:nil] forKey:@"label"];
-        }
-        
-        id titleDict = [spec titleDictionary];
-        if(titleDict) {
-            NSMutableDictionary *newTitles = [[NSMutableDictionary alloc] init];
-            for(NSString *key in titleDict) {
-                NSString *value = [titleDict objectForKey:key];
-                [newTitles setObject:[traduzioni localizedStringForKey:value value:value table:nil] forKey: key];
-            }
-            [spec setTitleDictionary:newTitles];
+            [spec setProperty:[settingsBundle localizedStringForKey:label value:label table:nil] forKey:@"label"];
         }
     }
     return specifiers;

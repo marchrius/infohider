@@ -72,6 +72,11 @@
 {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=XS9D8AAK5XERA&lc=GB&item_name=Matteo%20Gaggiano&item_number=A%20thanks%20for%20tweaks&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted"]];
 }
+    
+- (void)visitGoogle:(id)arg
+{
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://plus.google.com/105378430236922152318/posts"]];
+}
 
 - (NSString*)valueForSpecifier:(PSSpecifier*)specifier
 {

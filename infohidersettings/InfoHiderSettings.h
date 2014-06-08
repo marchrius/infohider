@@ -17,8 +17,8 @@
 @property (nonatomic) BOOL enabledAll;
 
 - (id)specifiers;
-- (void)visitWebsite:(id)arg;
-- (void)visitTwitter:(id)arg;
+//- (void)visitWebsite:(id)arg;
+//- (void)visitTwitter:(id)arg;
 //- (NSString*)version;
 //- (void)setPreferenceValue:(id)value specifier:(id)specifier;
     
